@@ -76,7 +76,8 @@ def mcl(instance_path, res_folder, strategy=2):
 	for exp_iter in range(2,3):
 	#for exp_iter in range(2,5):
 		nr_cl_with_diff_inf = []
-		for save_id, inf_iter in enumerate(np.arange(1.1, 1.85, 0.05)):
+		#for save_id, inf_iter in enumerate(np.arange(1.2, 1.85, 0.05)):
+		for save_id, inf_iter in enumerate([1.3]):
 		#for inf_iter in range(6):	
 			gc.collect()
 			labels = [-1 for x in range(n)]

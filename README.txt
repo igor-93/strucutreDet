@@ -1,0 +1,1 @@
+For python code: before every run (assuming we did some changes in clustering code), EMPTY 'gps' folder 

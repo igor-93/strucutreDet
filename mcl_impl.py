@@ -55,6 +55,7 @@ def get_clusters(A):
         if r[i]:
             clusters.append(A[i,:]>0)
 
+    print 'len(clusters) = ', len(clusters) 
     clust_map  ={}
     for cn , c in enumerate(clusters):
         for x in  [ i for i, x in enumerate(c) if x ]:
@@ -103,22 +104,28 @@ def stop(M, i):
 
 def mcl_implementation(M, expand_factor = 2, inflate_factor = 2, max_loop = 20 , mult_factor = 1):
 
-    M = add_diag(M, mult_factor)
+    
+    #M = add_diag(M, mult_factor)
+    #print M[0,:]
     M = skpp.normalize(M, norm='l1', axis=0, copy=False)
 
-    M = prune(M)
 
+    M = prune(M)
+    test_counter = 0
     for i in range(max_loop):
         
         M = inflate(M, inflate_factor)
         M = expand(M, expand_factor)
         M = prune(M)
 
-        test_counter = i  
+        test_counter = i
         if stop(M, i): break
           
 
     print 'MCL_STOPPED at iteration %i ' %test_counter 
+    print 'non-zeros: '#, len(M.nonzero()[0])
+    print zip(M.nonzero()[0], M.nonzero()[1])
+
     M = M.toarray()
     print M
     clusters = get_clusters(M)
@@ -145,6 +152,7 @@ def r_mcl_implementation(M, inflate_factor = 2, max_loop = 20 , mult_factor = 1)
         
 
     print 'R-MCL_STOPPED at iteration %i' %test_counter 
+    print 'non-zeros: ', M.nonzero()
     M = M.toarray()
     clusters = get_clusters(M)
     return clusters

@@ -18,7 +18,7 @@ if username == 'igorpesic':
 	#files += ['/home/'+username+'/thesis/from_desktop/instances/miplib/gesa2.mps']
 	#files += ['/home/'+username+'/Desktop/instances/miplib/10teams.mps']
 	#files += ['/home/'+username+'/Desktop/instances/miplib/rout.mps']
-	files += ['/home/igorpesic/thesis/from_desktop/instances/miplib/noswot.mps']
+	files += ['/home/igorpesic/Dropbox/Thesis/Important/Resources/instances/miplib/noswot.mps']
 	#files += ['/home/igorpesic/Desktop/instances/miplib2010/neos-820146.mps']
 	#files += ['/home/igorpesic/Desktop/instances/miplib2010/wachplan.mps']
 	#files += ['/home/igorpesic/Desktop/instances/miplib2010/neos-911880.mps']
@@ -47,7 +47,7 @@ colors = ['xk-','xr-', 'xb-', 'xg-', 'xy-', 'xk-', 'xm-']
 for iteration, instance_file in enumerate(files):
 
 	#mcl(instance_file, res_folder, 1)
-	mcl(instance_file, res_folder, 1)
+	mcl(instance_file, res_folder, 9)
 	#mcl(instance_file, res_folder, 5)
 	#mcl(instance_file, res_folder, 6)
 
