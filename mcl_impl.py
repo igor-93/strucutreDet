@@ -1,4 +1,6 @@
-#!/usr/bin/env python
+# Implementation of MCL clustering algorithm.
+# Author: Igor Pesic
+#
 
 import sys
 import numpy as np
